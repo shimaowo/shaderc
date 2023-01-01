@@ -1,5 +1,8 @@
 # Suppress all warnings from third-party projects.
-set_property(DIRECTORY APPEND PROPERTY COMPILE_OPTIONS -w)
+# NP FIX: This is incorrect when building shaderc as a library
+# and causes a lot of build warning spam due to conflicting options
+# set_property(DIRECTORY APPEND PROPERTY COMPILE_OPTIONS -w)
+# NP END
 
 set(SHADERC_THIRD_PARTY_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}" CACHE STRING
   "Root location of all third_party projects")
